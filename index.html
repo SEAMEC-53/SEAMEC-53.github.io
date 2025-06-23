@@ -96,13 +96,15 @@
 
     /* Hero Section */
     .hero {
-  background-image: url('Images/bannerBack.png'); /* Use the background image */
-  background-size: cover; /* Cover the entire section */
-  width: 100%;
-  height: 350px;
-  text-align: center;
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
-}
+      background-image: url('Images/bannerBack.png'); /* Use the background image */
+      background-size: cover; /* Cover the entire section */
+      width: 100%;
+      height: 50vh;
+      min-height: 180px; /* Ensure it's not too small on mobile */
+      max-height: 400px; /* Prevent it from being too tall on large screens */
+      text-align: center;
+      transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+    }
 
 .hero:hover {
   box-shadow: 0 10px 20px rgba(73, 119, 127, 0.5); /* Back shadow with #49777F color */
