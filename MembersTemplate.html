@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>SEAMEC Event Article</title>
+  <style>
+    body {
+      margin: 0;
+    font-family: 'Roboto', arial, serif; /* Set Times New Roman as the font */
+      background-color: #f4f8fc;
+      color: #49777F;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(180deg, #33587A, #3F8A66); /* Horizontal split gradient */
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    .header p {
+      margin-top: 8px;
+      font-size: 18px;
+      color: #ddd;
+    }
+
+    /* Members Row */
+.members-row {
+  display: flex; /* Use Flexbox to align sections in a row */
+  justify-content: space-between; /* Add space between the sections */
+  gap: 20px; /* Add spacing between the sections */
+  max-width: 1200px; /* Limit the total width of the row */
+  margin: 40px auto; /* Center the row horizontally */
+  padding: 20px;
+}
+
+/* Individual Members Section */
+.members-section {
+  flex: 1; /* Allow sections to take equal space */
+  background: linear-gradient(90deg, #3F8A66, #3E4692); /* Gradient background */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center; /* Center-align the text */
+  color: white;
+}
+
+.members-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: rgb(221, 221, 69); /* Ensure heading text is white */
+}
+
+.members-section p {
+  font-size: 14px;
+  margin: 0;
+  color: white; /* Ensure paragraph text is white */
+}
+
+    /* Article Blocks Container */
+.article-block-container {
+  display: flex; /* Use Flexbox to align blocks in a row */
+  justify-content: space-between; /* Add space between the blocks */
+  gap: 40px; /* Add spacing between the blocks */
+  max-width: 1200px; /* Limit the total width of the container */
+  margin: 40px auto; /* Center the container horizontally */
+}
+
+/* Individual Article Block */
+.article-block {
+  flex: 1 1 calc(23% - 20px); /* Each block takes 25% of the row minus the gap */
+  max-width: calc(25% - 80px); /* Ensure the block doesn't exceed 25% of the row */
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding:  20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Article Blocks Container row 2*/
+.article-block-container-row2 {
+  display: flex;
+  justify-content: center;   /* Center the blocks */
+  gap: 60px;                 /* Reduce space between blocks */
+  max-width: 940px; /* Limit the total width of the container */
+  margin: 40px auto;
+}
+
+.article-block-row2 {
+  flex: 0 1 260px;           /* Fixed width, no extra shrinking/growing */
+  max-width: 260px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+/* Image Column */
+.article-image img {
+  width: 100%;
+  max-width: 100%;  /* Allow image to scale fully within container */
+  height: auto;     /* Maintain aspect ratio */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+/* Text Column */
+.article-content img {
+  max-width: 120px; /* Set a maximum width for the flag */
+  height: 75px; /* Maintain the aspect ratio */
+  display: block;
+  margin: 0 auto 10px auto; /* Center the flag image */
+}
+
+.article-content p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.article-content span {
+  font-size: 18px;
+  
+}
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(180deg, #3F8A66, #33587A); /* Horizontal split gradient */
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 1024px) {
+  .article-block-container,
+  .article-block-container-row2 {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .article-block,
+  .article-block-row2 {
+    flex: 1 1 45%;
+    max-width: 45%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .article-block,
+  .article-block-row2 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .article-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .article-content img {
+    max-width: 80px;
+    height: auto;
+  }
+}
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .article-block {
+        flex-direction: column;
+        text-align: center;
+      }
+      .article-content img {
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Members of SEAMEO</h1>
+    <p>Consisted of</p>
+  </header>
+
+  <!-- Members Section -->
+<section class="members-row">
+  <div class="members-section">
+    <h2>Affiliate (Bergabung)</h2>
+    <p>(7): University of Tsukuba Japan, The British Council, CEAIE, Asia-Pacific Centre of Education for International Understanding, BCCIE dan The Education University of Hong Kong, SEAOHUN</p>
+  </div>
+
+  <div class="members-section">
+    <h2>Associate (Bersekutu)</h2>
+    <p>(7): Australia, Jerman, Kanada, Kerajaan Maghribi, New Zealand, Sepanyol dan United Kingdom</p>
+  </div>
+
+  <div class="members-section">
+    <h2>Partners (Rakan Kongsi)</h2>
+    <p>(10): ASEAN Secretariat, AKCF, EdTech Hub, FCDO, GIZ RECOTwin, OECD, TPD, UNESCO Regional Office in Bangkok, UNICEF EAPRO, Wellcome Trust</p>
+  </div>
+</section>
+
+<h1 style="text-align: center;">SEAMEO Member Ministers</h1>
+<div class="article-block-container">
+
+  <!-- Article Block 1 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/Datin.jpg" alt="Opening Ceremony">
+    </div>
+    <div class="article-content">
+      <img src="Images/brunei.png" alt="Brunei Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Datin Seri Setia Dr Hjh Romaizah</span>
+      </p>
+      <p>Minister of Education</p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/cambodiaMin.png" alt="Cambodia Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/cambodia.png" alt="Cambodia Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Dr Hang Chuon Naron</span>
+      </p>
+      <p>Minister of Education, Youth and Sport</p>
+    </div>
+  </section>
+
+  <!-- Article Block 3 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/IndonesiaMinister.png" alt="Indonesia Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/indonesia.png" alt="Indonesia Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Prof Dr Abdul Mu’ti</span>
+      </p>
+      <p>Minister of Basic and Secondary Education</p>
+    </div>
+  </section>
+
+  <!-- Article Block 4 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/laosMin.png" alt="Laos Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/laos.png" alt="Laos Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Assoc Prof Dr Phout Simmalavong</span>
+      </p>
+      <p>Minister of Education</p>
+    </div>
+  </section>
+</div>
+
+<!-------------------------End------------------------------>
+
+<!-------------------------Start------------------------------>
+
+<br>
+<h1 style="text-align: center;">SEAMEO State Ministers</h1>
+<div class="article-block-container">
+  <!-- Article Block 1 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/MalaysiaMinister.png" alt="Malaysia Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/malaysia.png" alt="Malaysia Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Fadhlina Sidek</span>
+      </p>
+      <p>Minister of Education</p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/myanmarMinister.png" alt="myanmar Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/myanmar.png" alt="Myanmar Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Dr Nyunt Phay</span>
+      </p>
+      <p>Minister of Education</p>
+    </div>
+  </section>
+
+  <!-- Article Block 3 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/PhilipinesMinister.png" alt="Philippines Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/philippines.png" alt="Philippines Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Juan Edgardo ‘Sonny’ Angar</span>
+      </p>
+      <p>Minister of Education</p>
+    </div>
+  </section>
+
+  <!-- Article Block 4 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/SingaporeMinister.png" alt="Singapore Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/singapore.png" alt="Singapore Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Chan Chun Sing</span>
+      </p>
+      <p>Minister of Education</p>
+    </div>
+  </section>
+</div>
+
+
+<div class="article-block-container-row2">
+
+  <!-- Article Block 1 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/ThailandMin.png" alt="Opening Ceremony">
+    </div>
+    <div class="article-content">
+      <img src="Images/thailand.png" alt="Thailand Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Police General Permpoon Chidchob</span>
+      </p>
+      <p>Minister of Education</p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/TimorLesteMin.png" alt="Cambodia Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/timorLeste.png" alt="Timor Leste Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Madam Dulce de Jesus Soares</span>
+      </p>
+      <p>Minister of Education, Youth and Sport</p>
+    </div>
+  </section>
+
+  <!-- Article Block 3 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/VietnamMin.png" alt="Indonesia Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/vietnam.png" alt="Vietnam Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Assoc Prof Dr Nguyen Kim Son</span>
+      </p>
+      <p>Minister of Education and Training</p>
+    </div>
+  </section>
+</div>
+
+<!-------------------------End------------------------------>
+
+<!-------------------------Start------------------------------>
+
+<br>
+<h1 style="text-align: center;">SEAMEO Senior State Ministers</h1>
+<div class="article-block-container">
+  <!-- Article Block 1 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/bruneipk.png" alt="brunei Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/brunei.png" alt="brunei Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;"> Dr. Shamsiah Zuraini Kanchanawati
+binti Haji Tajuddin</span>
+      </p>
+      <p>Permanent Secretary (Core Education)</p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/cambodiaPK.png" alt="cambodia Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/cambodia.png" alt="cambodia Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Dr. Bo Chankoulika</span>
+      </p>
+      <p>Under Secretary of State Ministry of
+Education, Youth and Sport</p>
+    </div>
+  </section>
+
+  <!-- Article Block 3 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/indonesiaPK.png" alt="indonesia Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/indonesia.png" alt="indonesia Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Ir Suharti</span>
+      </p>
+      <p>
+        <span>Secretary-General,</span><br>
+        <span>Ministry of Primary and Secondary Education</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Article Block 4 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/laosPK.png" alt="Laos Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/laos.png" alt="Laos Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Assoc Prof Dr Silinthone Sacklokham</span>
+      </p>
+      <p>
+        <span>Director General,</span>
+        <span>Department of International Cooperation</span>
+      </p>
+    </div>
+  </section>
+</div>
+
+<div class="article-block-container">
+
+  <!-- Article Block 1 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/malaysiaPK.png" alt="malaysia">
+    </div>
+    <div class="article-content">
+      <img src="Images/malaysia.png" alt="malaysia Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Haji Ruji bin Haji Ubi</span>
+      </p>
+      <p>Director General of Education</p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/MyanmmarPK.png" alt="myanmar">
+    </div>
+    <div class="article-content">
+      <img src="Images/myanmar.png" alt="myanmar Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Prof Dr. May San Yee</span>
+      </p>
+      <p>Deputy Director General,<br>
+Department of Higher Education</p>
+    </div>
+  </section>
+
+  <!-- Article Block 3 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/PhilippinesPK.png" alt="philippines">
+    </div>
+    <div class="article-content">
+      <img src="Images/philippines.png" alt="philippines Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Gina O.Gonong </span>
+      </p>
+      <p>Undersecretary for <br>
+Curriculum and Teaching</p>
+    </div>
+  </section>
+
+  <!-- Article Block 4 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/singaporePK.png" alt="singapore">
+    </div>
+    <div class="article-content">
+      <img src="Images/singapore.png" alt="singapore Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Lim Wan Yong</span>
+      </p>
+      <p>Permanent Secretary (Education)</p>
+    </div>
+  </section>
+</div>
+
+<div class="article-block-container-row2">
+
+  <!-- Article Block 1 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/thailandPK.png" alt="thailand ">
+    </div>
+    <div class="article-content">
+      <img src="Images/thailand.png" alt="thailand Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Dr. Suthep Kaengsanthia</span>
+      </p>
+      <p>Permanent Secretary (Education)</p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/timorlestePK.png" alt="timorLeste ">
+    </div>
+    <div class="article-content">
+      <img src="Images/timorLeste.png" alt="timorLeste Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Dra Odilia das Dores Ung Martins</span>
+      </p>
+      <p>Director General, Office of Policy,<br>
+Planning and Inclusion</p>
+    </div>
+  </section>
+
+  <!-- Article Block 3 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/vietnamPK.png" alt="vietnam ">
+    </div>
+    <div class="article-content">
+      <img src="Images/vietnam.png" alt="vietnam Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Assoc Prof Dr Pham Quang Hung</span>
+      </p>
+      <p>Director General, <br>
+International Cooperation Department, <br>
+Ministry of Education and Training</p>
+    </div>
+  </section>
+  </div>
+
+
+<!-------------------------End------------------------------>
+
+<!-------------------------Start------------------------------>
+
+<br>
+<h1 style="text-align: center;">Associate Member Countries</h1>
+<div class="article-block-container">
+  <!-- Article Block 1 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/australia.png" alt="Australia's Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/AustraliaFlag.png" alt="Australian Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">The Hon</span> 
+        <span style="color: red; font-weight: bold;"> Jason Dean Clarebinti Haji Tajuddin</span>
+      </p>
+      <p>Minister of Education,<br> Department of Education, Skills and Employment</p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/canada.png" alt="Canada's Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/canadaFlag.png" alt="Canada Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">The Hon</span> 
+        <span style="color: red; font-weight: bold;"> Ms Melanie Joly</span>
+      </p>
+      <p>Minister of Foreign Affairs,<br> Office of the Minister of Foreign Affairs, Global Affairs Canada</p>
+    </div>
+  </section>
+
+  <!-- Article Block 3 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/germany.png" alt="Germany Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/GermanyFlag.png" alt="Germany Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Ms Annalena Baerbock</span>
+      </p>
+      <p>
+        <span>Federal Minister of Foreign Affairs, <br>Ministry of Foreign Affairs</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Article Block 4 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/morroco.png" alt="morroco Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/morrocoFlag.png" alt="morroco Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Mr Azzedine El Midaoui</span>
+      </p>
+      <p>
+        <span>Minister of Higher Education, Scientific Research & Innovation, <br>Ministry of Higher Education, Scientific Research and Innovation, Kingdom of Morocco</span>
+      </p>
+    </div>
+  </section>
+</div>
+
+<div class="article-block-container-row2">
+
+  <!-- Article Block 1 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/newzealand.png" alt="new zealand Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/newzealandFlag.png" alt="newzealand Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">The Hon</span> 
+        <span style="color: red; font-weight: bold;">Ms Erica Stanford</span>
+      </p>
+      <p>Minister of Education, <br>Ministry of Education</p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/spain.png" alt="Spain">
+    </div>
+    <div class="article-content">
+      <img src="Images/spainFlag.png" alt="Spain Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">H E</span> 
+        <span style="color: red; font-weight: bold;">Ms Maria del Pilar Alegria Continente</span>
+      </p>
+      <p>Minister of Education and Vocational Training, <br>Ministry of Education and Vocational Training</p>
+    </div>
+  </section>
+
+  <!-- Article Block 3 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/united kingdom.png" alt="united kingdom Minister">
+    </div>
+    <div class="article-content">
+      <img src="Images/united kingdom flag.png" alt="united kingdom Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">The RT Hon</span> 
+        <span style="color: red; font-weight: bold;">Jonathan Reynolds</span>
+      </p>
+      <p>Secretary of State for Business and Trade and President of the Board of Trade, United Kingdom</p>
+    </div>
+  </section>
+  </div>
+
+<!-------------------------End------------------------------>
+
+<!-------------------------Start------------------------------>
+
+<br>
+<h1 style="text-align: center;">Affiliate Members</h1>
+<div class="article-block-container">
+  <!-- Article Block 1 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/uni of tsukuba japan.png" alt="Professor Dr Masami Isoda">
+    </div>
+    <div class="article-content">
+      <img src="Images/University_of_Tsukuba_emblem.svg.png" alt="University of Tsukuba emblem">
+      <p>
+        <span style="color: blue; font-weight: bold;">Prof Dr Masami Isoda <br></span>
+        <span style="color: red; font-weight: bold;">University of Tsukuba, Japan <br> (Member since 2011)</span>
+      </p>
+      <p>Director,<br>Centre for Research on International Cooperation in Educational Development (CRICED), <br>University of Tsukuba</p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/The british Council.png" alt="Dr Leighton Ernsberger">
+    </div>
+    <div class="article-content">
+      <img src="Images/britishCouncil.png" alt="Canada Flag">
+      <p>
+        <span style="color: blue; font-weight: bold;">Dr Leighton Ernsberger <br></span> 
+        <span style="color: red; font-weight: bold;">The British Council <br> (Member since 2014)</span>
+      </p>
+      <p>Director<br>Education and English, <br>East Asia Education and English Division<br>British Council</p>
+    </div>
+  </section>
+
+  <!-- Article Block 3 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/APCEIU.png" alt="Dr Hyun Mook Lim">
+    </div>
+    <div class="article-content">
+      <img src="Images/APCEIULogo.jpg" alt="APCEIU Logo">
+      <p>
+        <span style="color: blue; font-weight: bold;">Dr Hyun Mook Lim <br></span> 
+        <span style="color: red; font-weight: bold;">Asia Pacific Centre of Education for International Understanding (APCEIU) <br> (Member since 2019)</span>
+      </p>
+      <p>
+        <span>Director UNESCO, Asia-Pacific Centre of Education for International Understanding</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Article Block 4 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="Images/CEAIE.png" alt="Mr Yang Jun">
+    </div>
+    <div class="article-content">
+      <img src="Images/CEAIELogo.png" alt="CEAIE Logo">
+      <p>
+        <span style="color: blue; font-weight: bold;">Mr Yang Jun <br></span> 
+        <span style="color: red; font-weight: bold;">China Education Association for International Exchange (CEAIE) <br> (Member since 2024)</span>
+      </p>
+      <p>
+        <span>Secretary General, China Education for International Exchange (CEAIE)</span>
+      </p>
+    </div>
+  </section>
+</div>
+
+<div class="article-block-container-row2">
+
+  <!-- Article Block 1 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/BCCIE.png" alt="Dr Randall Martin">
+    </div>
+    <div class="article-content">
+      <img src="Images/BCCIELogo.png" alt="BCCIE Logo">
+      <p>
+        <span style="color: blue; font-weight: bold;">Dr Randall Martin <br> </span> 
+        <span style="color: red; font-weight: bold;">British Columbia Council for International Education (BCCIE) <br> (Member since 2006)</span>
+      </p>
+      <p>Executive Director, British Columbia Council for International Education (BCCIE)</p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/EdUHK.png" alt="Prof John Lee Chi-Kin">
+    </div>
+    <div class="article-content">
+      <img src="Images/EdUHKLogo.png" alt="EdUHK Logo">
+      <p>
+        <span style="color: blue; font-weight: bold;">Prof John Lee Chi-Kin <br></span> 
+        <span style="color: red; font-weight: bold;">The Education University of Hong Kong (EdUHK) <br> (Member since 2023)</span>
+      </p>
+      <p>President and Chair Professor of Curriculum and Instruction <br> The Education University of Hong Kong</p>
+    </div>
+  </section>
+
+  <!-- Article Block 3 -->
+  <section class="article-block-row2">
+    <div class="article-image">
+      <img src="Images/southeast asia one health university network.png" alt="Dr Tongkorn Meeyam">
+    </div>
+    <div class="article-content">
+      <img src="Images/southeast asia one health university network logo.png" alt="southeast asia one health university network logo">
+      <p>
+        <span style="color: blue; font-weight: bold;">Dr Tongkorn Meeyam <br></span> 
+        <span style="color: red; font-weight: bold;">Southeast Asia One Health University Network <br> (Member since 2023)</span>
+      </p>
+      <p>Executive Director <br> SEAOHUN Secretariat</p>
+    </div>
+  </section>
+  </div>
+
+<!-------------------------End------------------------------>
+
+<!-------------------------Start------------------------------>
+
+  <!-- Go Back Button -->
+  <div style="padding: 20px; text-align: center;">
+    <a href="index.html" style="
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #49777F;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    ">
+      &larr; Go Back
+    </a>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 SEAMEC - Southeast Asian Ministers of Education Council</p>
+  </footer>
+</body>
+</html>

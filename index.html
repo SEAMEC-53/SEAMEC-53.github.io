@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SEAMEC - Southeast Asian Ministers of Education Council</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+    margin: 0;
+    font-family: 'Roboto', arial, serif; /* Set Times New Roman as the font */
+    background-color: #f9f9f9;
+    color: #49777F;
+}
+
+.h1 , h2, h3 {
+  color:#057954;
+}
+    .header {
+  /*background: linear-gradient(180deg, #3F8A66, #33587A);  Updated gradient */ 
+  background: 
+    /* optional dark overlay for better text contrast */
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('Images/headerBackground.png') center center / cover no-repeat;
+  color: white;
+  padding: 20px;
+}
+
+.header .container img {
+  max-height: 100px;    /* or whatever height fits your design */
+  width: auto;         /* preserve aspect ratio */
+}
+
+.floating-note {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+   background: #e6f9ec; /* whiteish green */
+  color: #222;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  font-size: 14px;
+  z-index: 1000;
+  max-width: 300px;
+}
+    .slider-wrapper {
+      position: relative;
+      z-index: 1;              /* carousel sits below */
+      overflow: visible;
+    }
+    .content-wrapper {
+      position: relative;
+      z-index: 2;              /* content (tooltips) sits above */
+    }
+
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+
+
+.seameo-logo-center {
+  display: block;
+  margin: 0 auto 8px auto;
+  height: 7em; /* Adjust as needed */
+  width: auto;
+}
+
+.header h1 {
+  margin: 0 0 8px 0;
+}
+
+
+
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+  background-color: #e0f0ff;
+  padding: 60px 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.hero:hover {
+  box-shadow: 0 10px 20px rgba(73, 119, 127, 0.5); /* Back shadow with #49777F color */
+  transform: scale(1.05); /* Slightly enlarge the section */
+}
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* Base styles (desktop first) */
+.carousel {
+  position: relative;
+  width: 1425px;
+  margin: 40px auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-slide {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-slide img {
+  width: 80%;
+  height: 550px;
+  object-fit: fill;
+  border-radius: 8px;
+}
+
+/* desktop M */
+@media (max-width: 1400px) {
+  .carousel {
+    width: 1000px;
+  }
+  .carousel-slide img {
+    height: 500px;
+  }
+}
+
+/* desktop S */
+@media (max-width: 1200px) {
+  .carousel {
+    width: 900px;
+  }
+  .carousel-slide img {
+    height: 450px;
+  }
+}
+
+/* Tablet L */
+@media (max-width: 1000px) {
+  .carousel {
+    width: 750px;
+  }
+  .carousel-slide img {
+    height: 425px;
+  }
+}
+
+/* Tablet M */
+@media (max-width: 800px) {
+  .carousel {
+    width: 600px;
+  }
+  .carousel-slide img {
+    max-height: 350px;
+  }
+}
+
+/* Tablet S */
+@media (max-width: 650px) {
+  .carousel {
+    width: 450px;
+  }
+  .carousel-slide img {
+    max-height: 300px;
+  }
+}
+
+/* Phone */
+@media (max-width: 500px) {
+  .carousel {
+    width: 350px;
+  }
+  .carousel-slide img {
+    max-height: 250px;
+  }
+}
+
+
+
+    .carousel input {
+      display: none;
+    }
+
+    #slide1:checked ~ .carousel-slides {
+      transform: translateX(0%);
+    }
+
+    #slide2:checked ~ .carousel-slides {
+      transform: translateX(-100%);
+    }
+
+    #slide3:checked ~ .carousel-slides {
+      transform: translateX(-200%);
+    }
+
+    #slide4:checked ~ .carousel-slides {
+      transform: translateX(-300%);
+    }
+
+    #slide5:checked ~ .carousel-slides {
+      transform: translateX(-400%);
+    }
+
+    #slide6:checked ~ .carousel-slides {
+      transform: translateX(-500%);
+    }
+
+    #slide7:checked ~ .carousel-slides {
+      transform: translateX(-600%);
+    }
+
+    #slide8:checked ~ .carousel-slides {
+      transform: translateX(-700%);
+    }
+
+    #slide9:checked ~ .carousel-slides {
+      transform: translateX(-800%);
+    }
+
+    #slide10:checked ~ .carousel-slides {
+      transform: translateX(-900%);
+    }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .carousel-dots label {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      border: 2px solid #666;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    #slide1:checked ~ .carousel-dots label[for="slide1"],
+    #slide2:checked ~ .carousel-dots label[for="slide2"],
+    #slide3:checked ~ .carousel-dots label[for="slide3"],
+    #slide4:checked ~ .carousel-dots label[for="slide4"],
+    #slide5:checked ~ .carousel-dots label[for="slide5"],
+    #slide6:checked ~ .carousel-dots label[for="slide6"],
+    #slide7:checked ~ .carousel-dots label[for="slide7"],
+    #slide8:checked ~ .carousel-dots label[for="slide8"],
+    #slide9:checked ~ .carousel-dots label[for="slide9"],
+    #slide10:checked ~ .carousel-dots label[for="slide10"] {
+      background-color: #333;
+      transform: scale(1.2);
+    }
+
+
+    /* Gallery Grid (optional) */
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px; /* Adjust spacing as needed */
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+  transform: scale(1.05);
+}
+
+.lightbox-toggle ~ .lightbox-overlay {
+  display: none;
+}
+.lightbox-toggle:checked + .lightbox-overlay {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  object-fit: fill; /* Ensures the image covers the area without distortion */
+}
+.lightbox-bg {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+    
+
+
+    /* Section Titles */
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h3 {
+      font-size: 28px;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    /* Mission List */
+    .mission-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .mission-list li {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    /* Member Cards */
+    #members h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: left; /* Aligns the text to the left */
+    margin: 0 0 20px 0; /* Removes auto margins and aligns to the top-left */
+    padding-left: 0; /* Ensure no extra padding */
+}
+.members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    margin-top: 0; /* Ensure no extra spacing above the grid */
+}
+
+    .member-card {
+      background: linear-gradient(to top, #3F8A66, #33587A); /* Horizontal split gradient */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: white; /* Ensure text is readable on the dark background */
+}
+
+    .member-card img {
+      border-radius: 0;
+      width: 120px;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .member-card[href="BruneiHistory.html"] img {
+  width: 180px; /* Adjust the width for a rectangular shape */
+  height: 120px; /* Maintain the aspect ratio */
+  border-radius: 0; /* Remove rounded corners */
+  object-fit: cover; /* Ensure the image fits well */
+}
+    .collage {
+            display: grid;
+            grid-template-rows: auto auto auto; /* Three rows */
+            grid-template-columns: repeat(3, 1fr); /* Default 3 equal columns */
+            grid-gap: 15px;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* First row: Images 1, 2, and 3 */
+        .collage-item:nth-child(1) {
+            grid-column: 1 / span 1; /* Image 1 takes 1 column */
+        }
+        .collage-item:nth-child(2) {
+            grid-column: 2 / span 1; /* Image 2 takes 1 column */
+        }
+        .collage-item:nth-child(3) {
+            grid-column: 3 / span 1; /* Image 3 takes 1 column */
+        }
+        /* Second row: Images 4, 5 and 6 */
+        .collage-item:nth-child(4) {
+            grid-column: 1 / span 1; /* Image 4 spans 2 columns */
+        }
+        .collage-item:nth-child(5) {
+            grid-column: 2 / span 1; /* Image 5 takes 1 column */
+        }
+        .collage-item:nth-child(6) {
+            grid-column: 3 / span 1; /* Image 6 takes 1 column */
+        }
+        /* Third row: Images  7, 8 and 9 */
+        .collage-item:nth-child(7) {
+            grid-column: 1 / span 1; /* Image 7 takes 1 column */
+        }
+        .collage-item:nth-child(8) {
+            grid-column: 2 / span 1; /* Image 8 takes 1 column */
+        }
+        .collage-item:nth-child(9) {
+            grid-column: 3 / span 1; /* Image 9 takes 1 column */
+        }
+        .collage-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .collage-item:nth-child(5) img {
+  width: 80%; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: cover; /* Ensure the image fits well */
+  border-radius: 8px; /* Keep the rounded corners */
+  margin: 0 auto; /* Center the image */
+  
+}
+
+        .collage-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover; /* Ensures the image fits well */
+        }
+        .collage-item .label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: white;
+            color: #49777F;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        .collage-item .number {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0,0,0,0.6);  /* Make the background clear */
+    color: white; /* Text color remains white */
+    padding: 5px 10px;
+    border: 1px white solid; /* Add a white border */
+    border-radius: 45%; /* Keep the circular shape */
+    font-size: 12px;
+}
+
+.scrolling-text {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%; /* Full width of the collage item */
+  background: rgba(0,0,0,0.6); color: white;
+  font-size: 14px;
+  padding: 6px 10px;
+  overflow: hidden; /* Hide overflow text */
+  white-space: nowrap; /* Prevent text from wrapping */
+  box-sizing: border-box;
+}
+
+.scrolling-text b {
+  display: inline-block;
+  animation: scroll-text 10s linear infinite; /* Scrolling animation */
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End off-screen to the left */
+  }
+}
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(180deg, #33587A, #3F8A66); /* Horizontal split gradient */
+  color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* --- Responsive Styles --- */
+    @media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .carousel-slide img {
+        width: 90%;
+        height: 400px;
+        object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .section h3 {
+        font-size: 24px;
+    }
+
+    .mission-list li {
+        font-size: 16px;
+    }
+
+    .members {
+        grid-template-columns: 1fr;
+    }
+
+    .member-card img {
+        width: 100px;
+        height: 100px;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .hero {
+        padding: 40px 10px;
+    }
+
+    .carousel-slide img {
+        height: 35vh;
+        object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .nav ul {
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+    }
+
+   .wiki-tooltip {
+  position: relative;
+  text-decoration: none;
+  color: #3366cc;
+  cursor: pointer;
+}
+
+.wiki-tooltip .wiki-tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 320px;
+  background-color: #f8f9fa;
+  color: #222;
+  text-align: left;
+  border-radius: 6px;
+  border: 1px solid #a2a9b1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  position: absolute;
+  z-index: 9999; /* Ensure the tooltip is above all other elements */
+  left: -100%;
+  top: 100%; /* Position the tooltip above the text */
+  transform: translateX(-50%);
+  transition: opacity 0.2s;
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.wiki-tooltip:hover .wiki-tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+  /* Automatic Carousel Animation for 10 slides */
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  10% { transform: translateX(0%); }
+  20% { transform: translateX(-100%); }
+  30% { transform: translateX(-200%); }
+  40% { transform: translateX(-300%); }
+  50% { transform: translateX(-400%); }
+  60% { transform: translateX(-500%); }
+  70% { transform: translateX(-600%); }
+  80% { transform: translateX(-700%); }
+  90% { transform: translateX(-800%); }
+  100% { transform: translateX(-900%); }
+}
+
+  .carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    animation: slide 80s infinite; /* Adjusted duration for 7 slides */
+  }
+
+    /* Add this CSS to make the event cards smaller */
+    .events {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust the size */
+    gap: 20px;
+  }
+
+  .event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  #events h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: left; /* Aligns the text to the left */
+    max-width: 750px; /* Matches the width of the collage */
+    margin: 0 auto 20px auto; /* Centers the heading above the collage */
+}
+
+  .event-card h4 {
+    font-size: 14px; /* Smaller font size */
+    margin-top: 8px;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+<header class="header">
+  
+  <div class="container">
+    <h1>SEAMEC</h1>
+    <img src="Images/MoE_Eng.jpg" alt="MoE Logo">
+    <img src="Images/SEAMEO_New_Logo.png" alt="SEAMEO Logo">
+    <img src="Images/SEAMEC.png" alt="SEAMEO Logo">
+    <nav class="nav">
+      <ul>
+        <li><a href="#members">Get to Know</a></li>
+        <li><a href="#members">Members</a></li>
+        <li><a href="#event">Event</a></li>
+        <li><a href="https://www.seameo.org/">SEAMEO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- Hero -->
+  <div class="content-wrapper">
+  <section class="hero">
+    <h2>Southeast Asian Ministers of Education Council (SEAMEC)</h2>
+    <p>
+      The governing body of 
+      <span class="wiki-tooltip" style="color: #3366cc; cursor: pointer;">
+        SEAMEO,
+        <span class="wiki-tooltip-text">
+            <img src="Images/Seameo_flags.jpg" alt="SEAMEO Logo" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;">
+            Southeast Asian Ministers of Education Organization: a regional intergovernmental organization established in 1965 to promote cooperation in education, science, and culture in Southeast Asia.
+        </span>
+      </span>
+      leading regional cooperation in 
+      <span class="wiki-tooltip" style="color: #3366cc; cursor: pointer;">
+        education,
+        <span class="wiki-tooltip-text">
+            <img src="Images/education.jpg" alt="Education" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;">
+            Addressing disparities in education by promoting inclusive policies, scholarships, and innovative teaching that ensure quality education for all learners.
+        </span>
+      </span> 
+      <span class="wiki-tooltip" style="color: #3366cc; cursor: pointer;">
+        science,
+        <span class="wiki-tooltip-text">
+            <img src="Images/science.jpg" alt="Science" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;">
+            Encouraging diversity in STEM through adaptive technology, mentorship programs, and gender-inclusive initiatives, making science education accessible to all.
+        </span>
+      </span> and 
+      <span class="wiki-tooltip" style="color: #3366cc; cursor: pointer;">
+        culture
+        <span class="wiki-tooltip-text">
+            <img src="Images/culture.jpeg" alt="Culture" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;">
+            Fostering regional identity by safeguarding traditional arts, languages, and indigenous practices, while promoting inclusivity and countering stereotypes.
+        </span>
+      </span> across
+      </span>
+      <span class="wiki-tooltip" style="color: #3366cc; cursor: pointer;">
+      Southeast Asia.
+      <span class="wiki-tooltip-text">
+        <img src="Images/Southeast_Asia.png" alt="Southeast Asia Map" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;">
+        A region consisting of 11 countries, known for its rich cultural diversity, economic growth, and strategic importance in global affairs.
+      </span>
+  </span>
+</p>
+</section>
+  </section>
+  </div>
+
+  <!-- Carousel -->
+   <div class="slider-wrapper">
+    <section>
+      <div class="carousel">
+        <div class="carousel-slides">
+          <div class="carousel-slide">
+            <img 
+              src="Images/banner1.png" 
+              alt="Slide 1"
+              onclick="location.href='Itinerary.html';"
+              >
+          </div>
+          <div class="carousel-slide">
+            <img 
+            src="Images/banner2.png"
+              alt="Slide 2"
+              onclick="location.href='Itinerary.html';" 
+              >
+          </div>
+          <div class="carousel-slide">
+            <img 
+            src="Images/banner3.png"
+              alt="Slide 3"
+              onclick="location.href='Itinerary.html';" 
+             >
+          </div>
+          <div class="carousel-slide">
+            <img 
+            src="Images/banner4.png"
+              alt="Slide 4"
+              onclick="location.href='Itinerary.html';" 
+             >
+          </div>
+          <div class="carousel-slide">
+            <img 
+            src="Images/banner5.png"
+              alt="Slide 5"
+              onclick="location.href='Itinerary.html';" 
+             >
+          </div>
+          <div class="carousel-slide">
+            <img 
+            src="Images/banner6.png"
+              alt="Slide 6"
+              onclick="location.href='Itinerary.html';" 
+             >
+          </div>
+          <div class="carousel-slide">
+            <img 
+            src="Images/banner7.png"
+              alt="Slide 7"
+              onclick="location.href='Itinerary.html';" 
+             >
+          </div>
+          <div class="carousel-slide">
+            <img 
+            src="Images/banner8.png"
+              alt="Slide 8"
+              onclick="location.href='Itinerary.html';" 
+             >
+          </div>
+          <div class="carousel-slide">
+            <img 
+            src="Images/banner9.png"
+              alt="Slide 9"
+              onclick="location.href='Itinerary.html';" 
+             >
+          </div>
+          <div class="carousel-slide">
+            <img 
+            src="Images/banner10.png"
+              alt="Slide 10" 
+              onclick="location.href='Itinerary.html';"
+             >
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Event Section -->
+    <section id="event" style="padding: 40px 20px;">
+      <h1 style="font-size: 36px; margin-bottom: 20px; text-align: left; max-width: 750px; margin-left: auto; margin-right: auto; color: #057954;">Events</h1>
+      <div class="collage">
+        <a href="Events/Bilateral-Meetings.html" class="collage-item" style="text-decoration: none; color: inherit;">
+          <img src="Images/EventTemp.jpeg" alt="Keynote Speeches">
+          <span class="number">#01</span>
+          <div class="scrolling-text"><b>Bilateral-Meetings</b></div>
+        </a>
+        <a href="Events/In-Camera-Session.html" class="collage-item" style="text-decoration: none; color: inherit;">
+          <img src="Images/EventTemp.jpeg" alt="Policy Research">
+          <span class="number">#02</span>
+          <div class="scrolling-text"><b>In-Camera Session</b></div>
+        </a>
+        <a href="Events/Opening-Ceremony-Of-SEAMEC53.html" class="collage-item" style="text-decoration: none; color: inherit;">
+          <img src="Images/EventTemp.jpeg" alt="Networking">
+          <span class="number">#03</span>
+          <div class="scrolling-text"><b>Opening Ceremony of SEAMEC53</b></div>
+        </a>
+        <a href="Events/7-SDEM-Roundtable-Discussion-Greening-Education.html" class="collage-item" style="text-decoration: none; color: inherit;">
+          <img src="Images/EventTemp.jpeg" alt="Workshops">
+          <span class="number">#04</span>
+          <div class="scrolling-text"><b>7th SDEM - Roundtable Discussion (Greening Education)</b></div>
+        </a>
+        <a style="text-decoration: none; color: inherit; display: flex; justify-content: center; align-items: center;">
+          <img src="Images/SEAMEO_New_Logo.png" alt="Workshops" style="width: 170px; height: auto; object-fit: cover; border-radius: 8px;">
+        </a>
+        
+        </a>
+        <a href="Events/Special-Session.html" class="collage-item" style="text-decoration: none; color: inherit;">
+          <img src="Images/EventTemp.jpeg" alt="Exhibition">
+          <span class="number">#05</span>
+          <div class="scrolling-text"><b>Special Session</b></div>
+        </a>
+          <a href="Events/Gala-Dinner.html" class="collage-item" style="text-decoration: none; color: inherit;">
+              <img src="Images/EventTemp.jpeg" alt="Exhibition">
+              <span class="number">#06</span>
+              <div class="scrolling-text"><b>Gala Dinner</b></div>
+          </a>
+          <a href="Events/Plenary-Session.html" class="collage-item" style="text-decoration: none; color: inherit;">
+              <img src="Images/EventTemp.jpeg" alt="Exhibition">
+              <span class="number">#07</span>
+              <div class="scrolling-text"><b>Plenary Session</b></div>
+          </a>
+          <a href="Events/Visits.html" class="collage-item" style="text-decoration: none; color: inherit;">
+              <img src="Images/EventTemp.jpeg" alt="Exhibition">
+              <span class="number">#08</span>
+              <div class="scrolling-text"><b>Visits</b></div>
+          </a>
+      </div>
+    </section>
+
+  <!-- Members -->
+  
+  <section id="members" class="section">
+    <h1 style="font-size: 36px; margin-bottom: 20px; text-align: left; max-width: 100%; margin: 0; color: #057954;">Get to Know</h1>
+    <br>
+    <div class="members">
+      <a href="SEAMEOIntro.html" class="member-card" style="text-decoration: none; color: lightgray;">
+        <img src="Images/SEAMEO_New_Logo.png" alt="What is SEAMEO">
+        <h4>What is SEAMEO</h4>
+        <p>Learn about the Southeast Asian Ministers of Education Organization and its mission to promote regional cooperation in education, science, and culture.</p>
+      </a>
+      <a href="BruneiHistory.html" class="member-card" style="text-decoration: none; color: lightgray;">
+        <img src="/Images/brunei.png" alt="Brunei's History as host of SEAMEC">
+        <h4>History of Brunei Darussalam As SEAMEC Host</h4>
+        <p>Discover Brunei's contributions and history as a host of the Southeast Asian Ministers of Education Council conferences.</p>
+      </a>
+      <a href="MembersTemplate.html" class="member-card" style="text-decoration: none; color: lightgray;">
+        <img src="Images/members.jpg" alt="Members">
+        <h4>Members</h4>
+        <p>Explore the member countries of SEAMEC and their collaborative efforts in advancing education across Southeast Asia.</p>
+      </a>
+    </div>
+  </section>
+
+  <div class="floating-note">
+  <strong style="color: #49777F; font-size: large;">SEAMEC53 THEME</strong><br>
+  <p style="color: #057954; font-size: medium;">Greening Education for a Sustainable Southeast Asia: Empowering Change Through Collective Action</p>
+</div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 SEAMEC - Southeast Asian Ministers of Education Council</p>
+  </footer>
+</body>
+</html>

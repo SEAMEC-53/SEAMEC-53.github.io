@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SEAMEC Event Article</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+    font-family: 'Roboto', arial, serif; /* Set Times New Roman as the font */
+      background-color: #f4f8fc;
+      color: #49777F;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: 
+    /* optional dark overlay for better text contrast */
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('/Images/headerBackground.png') center center / cover no-repeat;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    .header p {
+      margin-top: 8px;
+      font-size: 18px;
+      color: #ddd;
+    }
+
+    /* Article Block */
+    .article-block {
+      display: flex;
+      align-items: flex-start;
+      max-width: 1000px;
+      margin: 40px auto;
+      gap: 40px;
+      padding: 0 20px;
+    }
+    /* Image Column */
+    .article-image {
+    position: relative; /* Make the container relative for absolute positioning of children */
+    flex: 0 0 300px; /* Maintain the original size */
+}
+
+.article-image img {
+    width: 100%; /* Ensure the image fits the container */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.article-image .number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: white; /* Semi-transparent background */
+    color: #49777F; /* White text */
+    padding: 5px 10px;
+    border-radius: 35%; /* Circular shape */
+    font-size: 12px;
+    z-index: 2; /* Ensure it appears above the image */
+}
+
+.article-image .label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    
+    color: white; /* White text */
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 20px;
+    z-index: 2; /* Ensure it appears above the image */
+}
+
+    
+    /* Text Column */
+    .article-content {
+      flex: 1;
+    }
+    .article-content h2 {
+      color: #49777F;
+      margin-top: 0;
+      font-size: 28px;
+    }
+    .article-content p {
+      margin-bottom: 1.2em;
+      font-size: 16px;
+    }
+
+    /* Alternate blocks */
+    .article-block.alt {
+      flex-direction: row-reverse;
+    }
+
+/* Add to your <style> section */
+.gallery-css-slideshow {
+  max-width: 700px;
+  margin: 48px auto 32px auto;
+  position: relative;
+  background: #49777F;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(51, 88, 122, 0.10);
+  padding: 0 0 32px 0;
+}
+.gallery-css-slideshow input[type="radio"] {
+  display: none;
+}
+.mySlides {
+  display: none;
+  position: relative;
+  animation: fade 0.7s;
+  text-align: center;
+  padding: 24px 0 0 0;
+}
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+#slide1:checked ~ .s1,
+#slide2:checked ~ .s2,
+#slide3:checked ~ .s3,
+#slide4:checked ~ .s4,
+#slide5:checked ~ .s5,
+#slide6:checked ~ .s6,
+#slide7:checked ~ .s7,
+#slide8:checked ~ .s8,
+#slide9:checked ~ .s9,
+#slide10:checked ~ .s10 {
+  display: block;
+}
+.mySlides img {
+  width: 90%;
+  max-width: 520px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(51, 88, 122, 0.13);
+  background: #e0f0ff;
+  margin-bottom: 12px;
+  margin-top: 50px;
+}
+.numbertext {
+  color: #49777F;
+  font-size: 14px;
+  padding: 7px 14px;
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  background: #fff;
+  border-radius: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+.caption-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 10px 18px;
+  color: #33587A;
+  border-radius: 0 0 12px 12px;
+  margin: 0 auto 0 auto;
+  font-size: 1.08rem;
+  width: 90%;
+  max-width: 520px;
+  box-shadow: 0 2px 8px rgba(51, 88, 122, 0.07);
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin-top: -22px;
+  color: #33587A;
+  font-weight: bold;
+  font-size: 28px;
+  border-radius: 50%;
+  user-select: none;
+  background: #fff;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+  box-shadow: 0 2px 8px rgba(51, 88, 122, 0.10);
+}
+.prev { left: 24px; }
+.next { right: 24px; }
+.prev:hover, .next:hover {
+  background-color: #fff;
+  transform: scale(1.08);
+}
+.row {
+  display: flex;
+  overflow-x: auto;
+  gap: 14px;
+  margin-top: 22px;
+  padding-bottom: 8px;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  /* Optional: add a little padding for easier grabbing */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.row:active {
+  cursor: grabbing;
+}
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+.column {
+  flex: 0 0 auto;
+  width: 80px;
+  scroll-snap-align: start;
+  /* padding-left: 15px;   */
+  padding-inline-start: 15PX;
+  }
+
+.demo {
+  opacity: 0.6;
+  border-radius: 6px;
+  transition: opacity 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(51, 88, 122, 0.07);
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid transparent;
+}
+
+input#slide1:checked ~ .row label[for="slide1"] img,
+input#slide2:checked ~ .row label[for="slide2"] img,
+input#slide3:checked ~ .row label[for="slide3"] img,
+input#slide4:checked ~ .row label[for="slide4"] img,
+input#slide5:checked ~ .row label[for="slide5"] img,
+input#slide6:checked ~ .row label[for="slide6"] img,
+input#slide7:checked ~ .row label[for="slide7"] img,
+input#slide8:checked ~ .row label[for="slide8"] img,
+input#slide9:checked ~ .row label[for="slide9"] img,
+input#slide10:checked ~ .row label[for="slide10"] img {
+  opacity: 1;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 16px #fff;
+}
+
+.demo:hover {
+  opacity: 1;
+}
+
+/* Optional: Hide scrollbar for a cleaner look */
+.row::-webkit-scrollbar {
+  height: 8px;
+  background: #e0f0ff;
+}
+.row::-webkit-scrollbar-thumb {
+  background: #49777F;
+  border-radius: 4px;
+}
+
+    /* Lightbox Overlay */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 32px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+   
+
+/* Footer */
+    .footer {
+      background: linear-gradient(180deg, #33587A, #3F8A66); /* Horizontal split gradient */
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .article-block {
+        flex-direction: column;
+      }
+      .article-block.alt {
+        flex-direction: column;
+      }
+      .article-image {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+    
+
+  <header class="header">
+    <h1>Opening Ceremony Of SEAMEC53</h1>
+    <p>Tuesday |  5 Muharram 1447 | 1st July 2025</p>
+    <p> 10.00 am - 12 00 noon</p>
+    <p>Indera Samudra Grand Hall The Empire Brunei Jerudong Negara Brunei Darussalam</p>
+  </header>
+
+
+  <!-- Article Block 1 -->
+  <section class="article-block">
+    <div class="article-image">
+      <img src="../images/culture.jpeg" alt="Opening Ceremony">
+      <span class="number">about what</span>
+      <div class="label"><b>description of image taken</b></div>
+    </div>
+    <div class="article-content">
+      <h2 style="color: #057954;">Opening Ceremony</h2>
+      <p>
+        His Majesty Sultan Haji Hassanal Bolkiah Mu’izzaddin Waddaulah ibni Al-Marhum Sultan Haji Omar ‘Ali Saifuddien Sa’adul Khairi Waddien, Sultan and Yang Di-Pertuan of Brunei Darussalam, accompanied by members of the Royal Family, graciously consented to officiate the Opening Ceremony of the 53rd Southeast Asian Ministers of Education Organisation (SEAMEO) Council Conference held on 1st July 2025. His Majesty also officiated the launch of the “Green Education Plan”.   
+      </p>
+    </div>
+  </section>
+
+  <!-- Article Block 2 (Alternate layout) -->
+  <section class="article-block alt">
+    <div class="article-image">
+      <img src="../images/education.jpg" alt="Keynote Speech">
+      <span class="number">about what</span>
+      <div class="label"><b>description of image taken</b></div>
+    </div>
+    <div class="article-content">
+      <h2 style="color: #057954;">Green Education Plan Book</h2>
+      <p>
+        The GEP outlines a comprehensive national strategy to embed environmental sustainability across all levels of Brunei Darussalam’s education system. It provides a national framework for integrating eco-conscious principles into curriculum development, institutional operations, teacher capacity building, and community engagement. The GEP is fully aligned with Wawasan Brunei 2035, the Brunei National Climate Change Policy (BNCCP), and relevant ministerial priorities, reinforcing the nation’s commitment to a sustainable and climate-resilient future.
+      </p>
+    </div>
+  </section>
+
+  <div class="container gallery-css-slideshow">
+
+  <!-- Radio buttons for slides -->
+  <input type="radio" name="gallery" id="slide1" checked>
+  <input type="radio" name="gallery" id="slide2">
+  <input type="radio" name="gallery" id="slide3">
+  <input type="radio" name="gallery" id="slide4">
+  <input type="radio" name="gallery" id="slide5">
+  <input type="radio" name="gallery" id="slide6">
+  <input type="radio" name="gallery" id="slide7">
+  <input type="radio" name="gallery" id="slide8">
+  <input type="radio" name="gallery" id="slide9">
+  <input type="radio" name="gallery" id="slide10">
+
+  <!-- Slides -->
+  <div class="mySlides s1">
+    <div class="numbertext">1 / 10</div>
+    <img src="../images/datin1.jpg" style="width:100%" alt="Group Discussion">
+    <div class="caption-container"><p>Group Discussion</p></div>
+    <label class="prev" for="slide10">&#10094;</label>
+    <label class="next" for="slide2">&#10095;</label>
+  </div>
+  <div class="mySlides s2">
+    <div class="numbertext">2 / 10</div>
+    <img src="../images/group_pic1.jpg" style=" width:100%" alt="Workshop Session">
+    <div class="caption-container"><p>Workshop Session</p></div>
+    <label class="prev" for="slide1">&#10094;</label>
+    <label class="next" for="slide3">&#10095;</label>
+  </div>
+  <div class="mySlides s3">
+    <div class="numbertext">3 / 10</div>
+    <img src="../images/bk1.jpg" style="width:100%" alt="Cultural Exchange">
+    <div class="caption-container"><p>Cultural Exchange</p></div>
+    <label class="prev" for="slide2">&#10094;</label>
+    <label class="next" for="slide4">&#10095;</label>
+  </div>
+  <div class="mySlides s4">
+    <div class="numbertext">4 / 10</div>
+    <img src="../images/group_pic3.jpg" style="width:100%" alt="Closing Ceremony">
+    <div class="caption-container"><p>Closing Ceremony</p></div>
+    <label class="prev" for="slide3">&#10094;</label>
+    <label class="next" for="slide5">&#10095;</label>
+  </div>
+  <div class="mySlides s5">
+    <div class="numbertext">5 / 10</div>
+    <img src="../images/education.jpg" style="width:100%" alt="Education">
+    <div class="caption-container"><p>Education</p></div>
+    <label class="prev" for="slide4">&#10094;</label>
+    <label class="next" for="slide6">&#10095;</label>
+  </div>
+  <div class="mySlides s6">
+    <div class="numbertext">6 / 10</div>
+    <img src="../images/culture.jpeg" style="width:100%" alt="Culture">
+    <div class="caption-container"><p>Culture</p></div>
+    <label class="prev" for="slide5">&#10094;</label>
+    <label class="next" for="slide7">&#10095;</label>
+  </div>
+  <div class="mySlides s7">
+    <div class="numbertext">7 / 10</div>
+    <img src="../images/IS1.jpg" style="width:100%" alt="IS1">
+    <div class="caption-container"><p>IS1</p></div>
+    <label class="prev" for="slide6">&#10094;</label>
+    <label class="next" for="slide8">&#10095;</label>
+  </div>
+  <div class="mySlides s8">
+    <div class="numbertext">8 / 10</div>
+    <img src="../images/group_pic2.jpg" style="width:100%" alt="Group 2">
+    <div class="caption-container"><p>Group 2</p></div>
+    <label class="prev" for="slide7">&#10094;</label>
+    <label class="next" for="slide9">&#10095;</label>
+  </div>
+  <div class="mySlides s9">
+    <div class="numbertext">9 / 10</div>
+    <img src="../images/group_pic4.jpg" style="width:100%" alt="Group 4">
+    <div class="caption-container"><p>Group 4</p></div>
+    <label class="prev" for="slide8">&#10094;</label>
+    <label class="next" for="slide10">&#10095;</label>
+  </div>
+  <div class="mySlides s10">
+    <div class="numbertext">10 / 10</div>
+    <img src="../images/seameo_bg_remove.png" style="width:100%" alt="SEAMEO">
+    <div class="caption-container"><p>SEAMEO</p></div>
+    <label class="prev" for="slide9">&#10094;</label>
+    <label class="next" for="slide1">&#10095;</label>
+  </div>
+
+  <!-- Thumbnails -->
+  <div class="row">
+    <div class="column">
+      <label for="slide1"><img class="demo cursor" src="../images/datin1.jpg" style="width:100%" alt="Group Discussion"></label>
+    </div>
+    <div class="column">
+      <label for="slide2"><img class="demo cursor" src="../images/group_pic1.jpg" style="width:100%" alt="Workshop Session"></label>
+    </div>
+    <div class="column">
+      <label for="slide3"><img class="demo cursor" src="../images/bk1.jpg" style="width:100%" alt="Cultural Exchange"></label>
+    </div>
+    <div class="column">
+      <label for="slide4"><img class="demo cursor" src="../images/group_pic3.jpg" style="width:100%" alt="Closing Ceremony"></label>
+    </div>
+    <div class="column">
+      <label for="slide5"><img class="demo cursor" src="../images/education.jpg" style="width:100%" alt="Education"></label>
+    </div>
+    <div class="column">
+      <label for="slide6"><img class="demo cursor" src="../images/culture.jpeg" style="width:100%" alt="Culture"></label>
+    </div>
+    <div class="column">
+      <label for="slide7"><img class="demo cursor" src="../images/IS1.jpg" style="width:100%" alt="IS1"></label>
+    </div>
+    <div class="column">
+      <label for="slide8"><img class="demo cursor" src="../images/group_pic2.jpg" style="width:100%" alt="Group 2"></label>
+    </div>
+    <div class="column">
+      <label for="slide9"><img class="demo cursor" src="../images/group_pic4.jpg" style="width:100%" alt="Group 4"></label>
+    </div>
+    <div class="column">
+      <label for="slide10"><img class="demo cursor" src="../images/seameo_bg_remove.png" style="width:100%" alt="SEAMEO"></label>
+    </div>
+  </div>
+</div>
+
+  <!-- Lightbox Overlays -->
+  <div id="img1" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="../images/datin1.jpg" alt="Large Group Discussion">
+  </div>
+  <div id="img2" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="../images/group_pic1.jpg" alt="Large Workshop Session">
+  </div>
+  <div id="img3" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="../images/bk1.jpg" alt="Large Cultural Exchange">
+  </div>
+  <div id="img4" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="../images/group_pic3.jpg" alt="Large Closing Ceremony">
+  </div>
+
+  <!-- Go Back Button -->
+  <div style="padding: 20px; text-align: center;">
+    <a href="../index.html" style="
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #49777F;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    ">
+      &larr; Go Back
+    </a>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 SEAMEC - Southeast Asian Ministers of Education Council</p>
+  </footer>
+</body>
+</html>
