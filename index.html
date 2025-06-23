@@ -99,8 +99,10 @@
 
     /* Hero Section */
     .hero {
-  background-color: #e0f0ff;
-  padding: 60px 20px;
+  background-image: url('Images/bannerBack.png'); /* Use the background image */
+  background-size: cover; /* Cover the entire section */
+  width: 100%;
+  height: 350px;
   text-align: center;
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
 }
@@ -109,17 +111,6 @@
   box-shadow: 0 10px 20px rgba(73, 119, 127, 0.5); /* Back shadow with #49777F color */
   transform: scale(1.05); /* Slightly enlarge the section */
 }
-
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: auto;
-    }
 
     /* Base styles (desktop first) */
 .carousel {
@@ -533,13 +524,6 @@
         margin-top: 10px;
     }
 
-    .hero h2 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
 
     .carousel-slide img {
         width: 90%;
@@ -692,49 +676,8 @@
   <!-- Hero -->
   <div class="content-wrapper">
   <section class="hero">
-    <h2>Southeast Asian Ministers of Education Council (SEAMEC)</h2>
-    <p>
-      The governing body of 
-      <span class="wiki-tooltip" style="color: #3366cc; cursor: pointer;">
-        SEAMEO,
-        <span class="wiki-tooltip-text">
-            <img src="Images/Seameo_flags.jpg" alt="SEAMEO Logo" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;">
-            Southeast Asian Ministers of Education Organization: a regional intergovernmental organization established in 1965 to promote cooperation in education, science, and culture in Southeast Asia.
-        </span>
-      </span>
-      leading regional cooperation in 
-      <span class="wiki-tooltip" style="color: #3366cc; cursor: pointer;">
-        education,
-        <span class="wiki-tooltip-text">
-            <img src="Images/education.jpg" alt="Education" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;">
-            Addressing disparities in education by promoting inclusive policies, scholarships, and innovative teaching that ensure quality education for all learners.
-        </span>
-      </span> 
-      <span class="wiki-tooltip" style="color: #3366cc; cursor: pointer;">
-        science,
-        <span class="wiki-tooltip-text">
-            <img src="Images/science.jpg" alt="Science" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;">
-            Encouraging diversity in STEM through adaptive technology, mentorship programs, and gender-inclusive initiatives, making science education accessible to all.
-        </span>
-      </span> and 
-      <span class="wiki-tooltip" style="color: #3366cc; cursor: pointer;">
-        culture
-        <span class="wiki-tooltip-text">
-            <img src="Images/culture.jpeg" alt="Culture" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;">
-            Fostering regional identity by safeguarding traditional arts, languages, and indigenous practices, while promoting inclusivity and countering stereotypes.
-        </span>
-      </span> across
-      </span>
-      <span class="wiki-tooltip" style="color: #3366cc; cursor: pointer;">
-      Southeast Asia.
-      <span class="wiki-tooltip-text">
-        <img src="Images/Southeast_Asia.png" alt="Southeast Asia Map" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px;">
-        A region consisting of 11 countries, known for its rich cultural diversity, economic growth, and strategic importance in global affairs.
-      </span>
-  </span>
-</p>
+
 </section>
-  </section>
   </div>
 
   <!-- Carousel -->
