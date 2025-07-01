@@ -536,5 +536,63 @@ input#slide10:checked ~ .row label[for="slide10"] img {
   <footer class="footer">
     <p>&copy; 2025 SEAMEC - Southeast Asian Ministers of Education Council</p>
   </footer>
+  <script>
+// Auto-scroll thumbnail row when slide changes
+function scrollToActiveThumbnail() {
+  // Get the currently checked radio button
+  const activeSlide = document.querySelector('input[name="gallery"]:checked');
+  if (!activeSlide) return;
+  
+  // Get the slide number from the ID (e.g., "slide3" -> 3)
+  const slideNumber = parseInt(activeSlide.id.replace('slide', ''));
+  
+  // Find the corresponding thumbnail
+  const thumbnailRow = document.querySelector('.row');
+  const thumbnailColumns = thumbnailRow.querySelectorAll('.column');
+  const activeThumbnail = thumbnailColumns[slideNumber - 1];
+  
+  if (activeThumbnail && thumbnailRow) {
+    // Calculate scroll position to center the active thumbnail
+    const thumbnailRect = activeThumbnail.getBoundingClientRect();
+    const rowRect = thumbnailRow.getBoundingClientRect();
+    const thumbnailCenter = activeThumbnail.offsetLeft + (activeThumbnail.offsetWidth / 2);
+    const rowCenter = thumbnailRow.offsetWidth / 2;
+    const scrollPosition = thumbnailCenter - rowCenter;
+    
+    // Smooth scroll to the calculated position
+    thumbnailRow.scrollTo({
+      left: Math.max(0, scrollPosition),
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Add event listeners to all radio buttons
+document.addEventListener('DOMContentLoaded', function() {
+  const radioButtons = document.querySelectorAll('input[name="gallery"]');
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', function() {
+      if (this.checked) {
+        setTimeout(scrollToActiveThumbnail, 50); // Small delay to ensure transition starts
+      }
+    });
+  });
+  
+  // Also trigger on page load for the initially selected slide
+  scrollToActiveThumbnail();
+});
+
+// Add event listeners to prev/next buttons for immediate scrolling
+document.addEventListener('DOMContentLoaded', function() {
+  const prevButtons = document.querySelectorAll('.prev');
+  const nextButtons = document.querySelectorAll('.next');
+  
+  [...prevButtons, ...nextButtons].forEach(button => {
+    button.addEventListener('click', function() {
+      setTimeout(scrollToActiveThumbnail, 100); // Small delay for radio button to change
+    });
+  });
+});
+</script>
 </body>
 </html>
