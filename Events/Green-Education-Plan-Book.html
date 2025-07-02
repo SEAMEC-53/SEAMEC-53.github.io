@@ -130,26 +130,22 @@
 }
 #slide1:checked ~ .s1,
 #slide2:checked ~ .s2,
-#slide3:checked ~ .s3,
-#slide4:checked ~ .s4,
-#slide5:checked ~ .s5,
-#slide6:checked ~ .s6,
-#slide7:checked ~ .s7,
-#slide8:checked ~ .s8,
-#slide9:checked ~ .s9,
-#slide10:checked ~ .s10 {
+#slide3:checked ~ .s3 {
   display: block;
 }
 .mySlides img {
-  width: 90%;
-  max-width: 520px;
-  height: 320px;
-  object-fit: cover;
+  width: 85%;
+  max-width: 480px;
+  height: auto;
+  object-fit: scale-down;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(51, 88, 122, 0.13);
   background: #e0f0ff;
   margin-bottom: 12px;
   margin-top: 50px;
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: bicubic;
 }
 .numbertext {
   color: #49777F;
@@ -247,14 +243,7 @@
 
 input#slide1:checked ~ .row label[for="slide1"] img,
 input#slide2:checked ~ .row label[for="slide2"] img,
-input#slide3:checked ~ .row label[for="slide3"] img,
-input#slide4:checked ~ .row label[for="slide4"] img,
-input#slide5:checked ~ .row label[for="slide5"] img,
-input#slide6:checked ~ .row label[for="slide6"] img,
-input#slide7:checked ~ .row label[for="slide7"] img,
-input#slide8:checked ~ .row label[for="slide8"] img,
-input#slide9:checked ~ .row label[for="slide9"] img,
-input#slide10:checked ~ .row label[for="slide10"] img {
+input#slide3:checked ~ .row label[for="slide3"] img {
   opacity: 1;
   border: 2px solid #fff;
   box-shadow: 0 4px 16px #fff;
@@ -340,9 +329,7 @@ input#slide10:checked ~ .row label[for="slide10"] img {
   <!-- Article Block 1 -->
   <section class="article-block">
     <div class="article-image">
-      <img src="../Images/placeholder.png" alt="Opening Ceremony">
-      <span class="number">about what</span>
-      <div class="label"><b>description of image taken</b></div>
+      <img src="../Images/Green Education Plan Book/12.JPG" alt="Opening Ceremony">
     </div>
     <div class="article-content">
       <h2 style="color: #057954;">Green Education Plan Book (GEP)</h2>
@@ -378,117 +365,40 @@ input#slide10:checked ~ .row label[for="slide10"] img {
   <input type="radio" name="gallery" id="slide1" checked>
   <input type="radio" name="gallery" id="slide2">
   <input type="radio" name="gallery" id="slide3">
-  <input type="radio" name="gallery" id="slide4">
-  <input type="radio" name="gallery" id="slide5">
-  <input type="radio" name="gallery" id="slide6">
-  <input type="radio" name="gallery" id="slide7">
-  <input type="radio" name="gallery" id="slide8">
-  <input type="radio" name="gallery" id="slide9">
-  <input type="radio" name="gallery" id="slide10">
 
   <!-- Slides -->
   <div class="mySlides s1">
-    <div class="numbertext">1 / 10</div>
-    <img src="../Images/datin1.jpg" style="width:100%" alt="Group Discussion">
-    <div class="caption-container"><p>Group Discussion</p></div>
-    <label class="prev" for="slide10">&#10094;</label>
+    <div class="numbertext">1 / 3</div>
+    <img src="../Images/Green Education Plan Book/6.JPG" alt="Group Discussion">
+    <div class="caption-container"><p>Green Education Plan Book</p></div>
+    <label class="prev" for="slide3">&#10094;</label>
     <label class="next" for="slide2">&#10095;</label>
   </div>
   <div class="mySlides s2">
-    <div class="numbertext">2 / 10</div>
-    <img src="../Images/group_pic1.jpg" style=" width:100%" alt="Workshop Session">
-    <div class="caption-container"><p>Workshop Session</p></div>
+    <div class="numbertext">2 / 3</div>
+    <img src="../Images/Green Education Plan Book/12.JPG" alt="Workshop Session">
+    <div class="caption-container"><p>Green Education Plan Book</p></div>
     <label class="prev" for="slide1">&#10094;</label>
     <label class="next" for="slide3">&#10095;</label>
   </div>
   <div class="mySlides s3">
-    <div class="numbertext">3 / 10</div>
-    <img src="../Images/bk1.jpg" style="width:100%" alt="Cultural Exchange">
-    <div class="caption-container"><p>Cultural Exchange</p></div>
+    <div class="numbertext">3 / 3</div>
+    <img src="../Images/Green Education Plan Book/13.JPG" alt="Cultural Exchange">
+    <div class="caption-container"><p>Green Education Plan Book</p></div>
     <label class="prev" for="slide2">&#10094;</label>
-    <label class="next" for="slide4">&#10095;</label>
-  </div>
-  <div class="mySlides s4">
-    <div class="numbertext">4 / 10</div>
-    <img src="../Images/group_pic3.jpg" style="width:100%" alt="Closing Ceremony">
-    <div class="caption-container"><p>Closing Ceremony</p></div>
-    <label class="prev" for="slide3">&#10094;</label>
-    <label class="next" for="slide5">&#10095;</label>
-  </div>
-  <div class="mySlides s5">
-    <div class="numbertext">5 / 10</div>
-    <img src="../Images/education.jpg" style="width:100%" alt="Education">
-    <div class="caption-container"><p>Education</p></div>
-    <label class="prev" for="slide4">&#10094;</label>
-    <label class="next" for="slide6">&#10095;</label>
-  </div>
-  <div class="mySlides s6">
-    <div class="numbertext">6 / 10</div>
-    <img src="../Images/placeholder.png" style="width:100%" alt="Culture">
-    <div class="caption-container"><p>Culture</p></div>
-    <label class="prev" for="slide5">&#10094;</label>
-    <label class="next" for="slide7">&#10095;</label>
-  </div>
-  <div class="mySlides s7">
-    <div class="numbertext">7 / 10</div>
-    <img src="../Images/IS1.jpg" style="width:100%" alt="IS1">
-    <div class="caption-container"><p>IS1</p></div>
-    <label class="prev" for="slide6">&#10094;</label>
-    <label class="next" for="slide8">&#10095;</label>
-  </div>
-  <div class="mySlides s8">
-    <div class="numbertext">8 / 10</div>
-    <img src="../Images/group_pic2.jpg" style="width:100%" alt="Group 2">
-    <div class="caption-container"><p>Group 2</p></div>
-    <label class="prev" for="slide7">&#10094;</label>
-    <label class="next" for="slide9">&#10095;</label>
-  </div>
-  <div class="mySlides s9">
-    <div class="numbertext">9 / 10</div>
-    <img src="../Images/group_pic4.jpg" style="width:100%" alt="Group 4">
-    <div class="caption-container"><p>Group 4</p></div>
-    <label class="prev" for="slide8">&#10094;</label>
-    <label class="next" for="slide10">&#10095;</label>
-  </div>
-  <div class="mySlides s10">
-    <div class="numbertext">10 / 10</div>
-    <img src="../Images/seameo_bg_remove.png" style="width:100%" alt="SEAMEO">
-    <div class="caption-container"><p>SEAMEO</p></div>
-    <label class="prev" for="slide9">&#10094;</label>
     <label class="next" for="slide1">&#10095;</label>
   </div>
 
   <!-- Thumbnails -->
   <div class="row">
     <div class="column">
-      <label for="slide1"><img class="demo cursor" src="../Images/datin1.jpg" style="width:100%" alt="Group Discussion"></label>
+      <label for="slide1"><img class="demo cursor" src="../Images/Green Education Plan Book/6.JPG" alt="Group Discussion"></label>
     </div>
     <div class="column">
-      <label for="slide2"><img class="demo cursor" src="../Images/group_pic1.jpg" style="width:100%" alt="Workshop Session"></label>
+      <label for="slide2"><img class="demo cursor" src="../Images/Green Education Plan Book/12.JPG" alt="Workshop Session"></label>
     </div>
     <div class="column">
-      <label for="slide3"><img class="demo cursor" src="../Images/bk1.jpg" style="width:100%" alt="Cultural Exchange"></label>
-    </div>
-    <div class="column">
-      <label for="slide4"><img class="demo cursor" src="../Images/group_pic3.jpg" style="width:100%" alt="Closing Ceremony"></label>
-    </div>
-    <div class="column">
-      <label for="slide5"><img class="demo cursor" src="../Images/education.jpg" style="width:100%" alt="Education"></label>
-    </div>
-    <div class="column">
-      <label for="slide6"><img class="demo cursor" src="../Images/placeholder.png" style="width:100%" alt="Culture"></label>
-    </div>
-    <div class="column">
-      <label for="slide7"><img class="demo cursor" src="../Images/IS1.jpg" style="width:100%" alt="IS1"></label>
-    </div>
-    <div class="column">
-      <label for="slide8"><img class="demo cursor" src="../Images/group_pic2.jpg" style="width:100%" alt="Group 2"></label>
-    </div>
-    <div class="column">
-      <label for="slide9"><img class="demo cursor" src="../Images/group_pic4.jpg" style="width:100%" alt="Group 4"></label>
-    </div>
-    <div class="column">
-      <label for="slide10"><img class="demo cursor" src="../Images/seameo_bg_remove.png" style="width:100%" alt="SEAMEO"></label>
+      <label for="slide3"><img class="demo cursor" src="../Images/Green Education Plan Book/13.JPG" alt="Cultural Exchange"></label>
     </div>
   </div>
 </div>
